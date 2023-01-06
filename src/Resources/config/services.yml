@@ -1,0 +1,20 @@
+services:
+    _defaults:
+        autoconfigure: true
+    #_instanceof:
+    #    Contao\CoreBundle\Framework\FrameworkAwareInterface:
+    #        calls:
+    #            - ["setFramework", ["@contao.framework"]]
+
+    #    Symfony\Component\DependencyInjection\ContainerAwareInterface:
+    #        calls:
+    #            - ["setContainer", ["@service_container"]]
+    # Contao content element XippoGmbH\MeteoschweizBundle\Controller\MeteoschweizController
+    XippoGmbH\MeteoschweizBundle\Controller\MeteoschweizController:
+        arguments:
+            - '@contao.framework'
+        tags:
+            - { name: contao.content_element, category: xippo_elements, template: ce_meteoschweiz, type: xippo_meteoschweiz }
+            - { name: container.service_subscriber }
+        public: true
+    

@@ -1,0 +1,8 @@
+<!-- contao/templates/ce_boot24.html5 -->
+<!-- indexer::stop -->
+
+<div class="container">
+	<?php echo $this->weather; ?>
+</div>
+
+<!-- indexer::continue -->
